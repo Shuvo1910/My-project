@@ -124,7 +124,7 @@ for i in range(len(words)):
 print(out)
 
 ran = {}
-kye = ['Shuvo','Nahid','Ratul','Rahat']
+kye = ['Shuvo','Nahid','Ratul','Rajib']
 value = [60,55,40,75]
 for i in range(len(kye)):
     ran[kye[i]] = value[i]
