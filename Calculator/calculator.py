@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
-def home():
+def index():
     return render_template("index.html", result=None)
 
 @app.route("/calculate", methods=["POST"])
@@ -11,7 +11,7 @@ def calculate():
     num1 = float(request.form["num1"])
     num2 = float(request.form["num2"])
     operation = request.form["operation"]
-    
+
     if operation == "add":
         result = num1 + num2
     elif operation == "subtract":
@@ -19,10 +19,10 @@ def calculate():
     elif operation == "multiply":
         result = num1 * num2
     elif operation == "divide":
-        result = num1 / num2 if num2 != 0 else "Error (division by zero)"
+        result = num1 / num2 if num2 != 0 else "Error: Division by zero"
     else:
-        result = "Invalid Operation"
-    
+        result = "Invalid operation"
+
     return render_template("index.html", result=result)
 
 if __name__ == "__main__":
